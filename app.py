@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 # Database Setup
 #################################################
-engine = create_engine("sqlite:///coffee.sqlite")
+engine = create_engine("sqlite:///https://coffee-analysis.herokuapp.com/coffee.sqlite")
 # reflect an existing database into a new model
 Base = automap_base()
 # reflect the tables
