@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quality</title>
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <body>
+        <div class="container">
+            <div class="jumbotron" style="text-align: center">
+                <h2><strong>Predict Species of Coffee from Coffee Quality</strong></h2><br>
+                <p>The data contain reviews of arabica and robusta coffee beans from the Coffee Quality Institute's trained reviewers.</p>
+                <p>Enter your quality measures below!</p>
+            </div>
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8">
+                    <form method="POST" action="/send" role="form", name="petform">
+                        <div class="form-group">
+                            <label for="inputAroma">Aroma</label>
+                            <input type="text" class="form-control" id="inputAroma" name="Aroma" placeholder="8.42">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAftertaste">Aftertaste</label>
+                            <input type="text" class="form-control" id="inputAftertaste" name="Aftertaste" placeholder="8.33">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAcidity">Acidity</label>
+                            <input type="text" class="form-control" id="inputAcidity" name="Acidity" placeholder="8.5">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputBody">Body</label>
+                            <input type="text" class="form-control" id="inputBody" name="Body" placeholder="8.25">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputBalance">Balance</label>
+                            <input type="text" class="form-control" id="inputBalance" name="Balance" placeholder="8.25">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputUniformity">Uniformity</label>
+                            <input type="text" class="form-control" id="inputUniformity" name="Uniformity" placeholder="10">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputCleanCup">Clean Cup</label>
+                            <input type="text" class="form-control" id="inputCleanCup" name="CleanCup" placeholder="10">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputSweetness">Sweetness</label>
+                            <input type="text" class="form-control" id="inputSweetness" name="Sweetness" placeholder="9.33">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputMoisture">Moisture</label>
+                            <input type="text" class="form-control" id="inputMoisture" name="Moisture" placeholder="0.11">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputC1Defect">Category One Defect</label>
+                            <input type="text" class="form-control" id="inputC1Defect" name="C1Defect" placeholder="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputC2Defect">Category Two Defect</label>
+                            <input type="text" class="form-control" id="inputC2Defect" name="C2Defect" placeholder="0">
+                        </div>
+                        <input type="submit" value="submit" class="btn btn-default">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

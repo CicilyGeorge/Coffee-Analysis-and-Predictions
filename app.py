@@ -5,11 +5,14 @@ from sqlalchemy import Column, Integer, String, Float
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 from flask import Flask, jsonify, render_template
+from flask_restful import Api
+from predictSpecies import Predict
 
 
 # Flask Setup
 #################################################
 app = Flask(__name__)
+API = Api(app)
 
 
 # Database Setup
@@ -67,10 +70,21 @@ def PCT():
     return jsonify(list)
 
 
+
+# Predictions
+# Add predict to route predict
+API.add_resource(Predict, '/predict')
+
+
+
 # html pages
 @app.route("/")
 def index():
-    return render_template('index.html')
+    return render_template('quality.html')
+
+@app.route("/quality")
+def quality():
+    return render_template('quality.html')    
 
 @app.route('/api')
 def api():

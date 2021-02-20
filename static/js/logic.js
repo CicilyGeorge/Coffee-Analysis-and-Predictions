@@ -15,8 +15,6 @@ function displayLineGraph_Production(Data, countryName) {
         productionValues.push(countryProduction[i].Value);
     }
 
-    console.log(years)
-    console.log(productionValues)
     // // Select the first 10 years of data for the actual population graph
     // // Convert year string to number
     // // Plot with both lines and markers for each data point
