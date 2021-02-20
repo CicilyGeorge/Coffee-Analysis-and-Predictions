@@ -76,7 +76,7 @@
                             <label for="inputC2Defect">Category Two Defect</label>
                             <input type="text" class="form-control" id="inputC2Defect" name="C2Defect" placeholder="0">
                         </div>
-                        <input type="submit" value="submit" class="btn btn-default">
+                        <input id="btn" type="submit" value="submit" class="btn btn-default">
                     </form>
                 </div>
             </div>
@@ -84,5 +84,36 @@
         </div>
 
     </body>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script type="text/javascript">
 
+        d3.onClick("btn", 
+            d3.json('/api/predict', {
+                method:"POST",
+                body: JSON.stringify({
+                    'aroma': 8,
+                    'aftertaste': 9,
+                    'acidity': 5,
+                    'body': 8,
+                    'balance': 8,
+                    'uniformity': 8,
+                    'cleancup': 8,
+                    'sweetness': 8,
+                    'moisture': 0.1,
+                    'cat1defect': 10,
+                    'cat2defect': 10
+                }),
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            })
+            .then(json => {
+                console.log(json);
+            })
+        );
+
+        
+
+
+    </script>
 </html>
