@@ -4,16 +4,19 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, Float
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, request
 from flask_restful import Api
 from predictSpecies import Predict
-
+import numpy as np
+import joblib
 
 # Flask Setup
 #################################################
 app = Flask(__name__)
 API = Api(app)
 
+# Load model
+Species_Model = joblib.load('model_species.sav')
 
 # Database Setup
 #################################################
@@ -73,10 +76,41 @@ def PCT():
 
 # Predictions
 # Add predict to route predict
-API.add_resource(Predict, '/predict')
+# API.add_resource(Predict, '/predict')
 
 
+# 
+@app.route("/api/predict", methods=["GET", "POST"])
+def predict():
+    if request.method == "GET":
+        # return "Here's how you use this API....."  # CICILY TO FILL THIS WITH MORE INFO 
+        return render_template("api.html")
+    
+    if request.method == "POST":
+        
+        print(request.json)
 
+        if not request.json: # if not JSON, then return HTTP 400 - Error 
+            return "JSON body not found", 400
+            
+        # if OK, then perform prediction and return result 
+        modelInputs = {
+            'aroma': request.json['aroma'],
+            'aftertaste': request.json['aftertaste'],
+            'acidity': request.json['acidity'],
+            'body': request.json['body'],
+            'balance': request.json['balance'],
+            'uniformity': request.json['uniformity'],
+            'cleancup': request.json['cleancup'],
+            'sweetness': request.json['sweetness'],
+            'moisture': request.json['moisture'],
+            'cat1defect': request.json['cat1defect'],
+            'cat2defect': request.json['cat2defect']
+        }
+        X_new = np.fromiter(modelInputs.values(), dtype=float) 
+        out = {'prediction': Species_Model.predict([X_new])[0]}
+        return jsonify(out), 200 # return success 
+        
 # html pages
 @app.route("/")
 def index():
