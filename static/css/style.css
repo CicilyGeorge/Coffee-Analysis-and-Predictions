@@ -38,7 +38,7 @@ a:focus {
     width: 100%;
     height: 1px;
     border-bottom: 1px dashed #ddd;
-    margin: 40px 0;
+    margin: 20px 0;
 }
 
 i,
@@ -60,6 +60,7 @@ span {
 }
 
 #sidebar {
+    left: 0;
     top: 0;
     bottom: 0;
     position: fixed;
@@ -68,7 +69,6 @@ span {
     background: #4b3114;
     color: #fff;
     transition: all 0.3s;
-    z-index: 1;
 }
 
 #sidebar .nonCTAs {
@@ -85,6 +85,7 @@ span {
 #sidebar.active .CTAs {
     display: none;
 }
+
 #sidebar.active .nonCTAs {
     display: block;
 }
@@ -191,16 +192,15 @@ ul.CTAs a {
 ----------------------------------------------------- */
 section {
     width: 100%;
+    min-height: 100vh;
 }
 
 #content {
-    float: right;
     position: relative;
     left: 200px;
     width: 86%;
     min-height: 100vh;
     transition: all 0.3s;
-    z-index: -1;
 }
 
 #content.expand {
@@ -215,23 +215,29 @@ section {
 
 #banner-container {
     width: 100%;
-    height: 34%;
-    background-color: #8b7e6f;
+    height: 22%;
+    background-color: #c49f76
+    /* #bda074; */
 }
 
+/* All banners */
+.banner{
+    /* Position and center the image to scale nicely on all screens */    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner .hero-text {
+    color: white !important;
+}
 
 /* The hero image */
 #banner {
     /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/bannerbg.txt");
-  
     /* Set a specific height */
     height: 75%;
-  
-    /* Position and center the image to scale nicely on all screens */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     position: relative;
   }
   
@@ -242,7 +248,7 @@ section {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white !important;
+    /* color: white !important; */
   }
 
   #banner .hero-text h1 {
@@ -259,9 +265,15 @@ section {
     text-align: center;
   }
 
-  .card-img{
+  .card-img {
       width: 50px;
       height: 50px;
+  }
+
+  .card-bigimg {
+    width: 12rem;
+    height: auto;
+    margin-top: 10px;
   }
 
 
@@ -270,38 +282,131 @@ section {
 ----------------------------------------------------- */
 #production {
     width: 100%;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     transition: all 0.3s;
 }
 
-#prodLine {
-    width: 100%;
-    height: auto;
+#production_banner {
+    height: 200px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/coffee_production.jpg");
 }
 
+/* #prodMap {
+    width: 100%;
+    height: 600px;
+    margin: auto;
+    background-color: #8b7e6f;
+}
 
+.leaflet-pane leaflet-map-pane {
+    transform: translate3d(103.841px, -25.2109px, 0px);
+  }
+  
+  .leaflet-container {
+    font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
+  }
+  
+  .leaflet-popup-content {
+    text-align: center;
+  }
+  .center {
+    display: block;
+  
+  }
+  .legend {
+    padding: 6px 8px;
+    font: 12px Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #555;
+    background: #fff;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .legend ul {
+    padding: 0;
+    margin: 0;
+    clear: both;
+    list-style-type: none;
+  }
+  
+  .legend li {
+    display: inline-block;
+    width: 30px;
+    height: 22px;
+  }
+  
+  .legend .min {
+    float: left;
+    padding-bottom: 5px;
+  }
+  
+  .legend .max {
+    float: right;
+  }
+  
+  .info { 
+    padding: 6px 8px; 
+    font: 16px/18px Arial, Helvetica, sans-serif; 
+    background: white; 
+    background: rgba(255,255,255,0.8); 
+    box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; 
+  } 
+  .info h4 { 
+    margin: 0 0 5px; 
+    color: #777; 
+    font-size: 18px;
+  }
+  .legend { 
+    text-align: left; 
+    line-height: 18px; 
+    color: rgb(51, 50, 50); 
+  } 
+  .legend i { 
+    width: 18px; 
+    height: 18px; 
+    float: left; 
+    margin-right: 8px; 
+    opacity: 0.7; 
+  }*/
+
+.lineGraphs {
+    padding: 10px 10%;
+    width: 80%;
+    min-height: 500px;
+} 
+
+
+
+/* ---------------------------------------------------
+    PRODUCTION
+----------------------------------------------------- */
+#consumption {
+    width: 100%;
+    min-height: 100vh;
+    transition: all 0.3s;
+    background-color: #837157;
+}
+
+#consumption_banner {
+    height: 200px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/coffee-consumption.jpg");
+}
 
 /* ---------------------------------------------------
     QUALITY
 ----------------------------------------------------- */
 #quality {
     width: 99%;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     background-color: #fff;
     transition: all 0.3s;
-    margin: 0 20px;
 }
 
 #quality_banner {
     height: 200px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/coffee-quality.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#quality_banner .hero-text {
-    color: #fff;
 }
 
 #imgSpecies{
@@ -335,6 +440,23 @@ section {
     color: #fff;
 }
 
+/* ---------------------------------------------------
+    API SECTION
+----------------------------------------------------- */
+
+#api h2 h4 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#api ul li {
+    margin-bottom: 10px;
+} 
+
+#api ul li a {
+    font-size: 16px;
+    color: #28a1c5;
+}
 
 /* ---------------------------------------------------
     MEDIAQUERIES
@@ -423,5 +545,10 @@ section {
       .card-img{
           width: 25px;
           height: 25px;
+      }
+
+      .card-bigimg {
+        width: 6rem;
+        height: auto;
       }
 }

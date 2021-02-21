@@ -46,7 +46,7 @@
                 <li>
                     <a href="#consumption">
                         <i class="fas fa-coffee"></i>
-                        Consumption
+                        Domestic Consumption
                     </a>                   
                 </li>
                 <li>
@@ -65,7 +65,7 @@
 
             <ul class="list-unstyled CTAs">
                 <li>
-                    <a href="api" class="download">
+                    <a href="#api" class="download">
                         <i class="fas fa-file-alt"></i>
                         API Documentation
                     </a>
@@ -85,7 +85,7 @@
             </ul>
             <ul class="list-unstyled nonCTAs">
                 <li>
-                    <a href="#" class="download">
+                    <a href="#api" class="download">
                         <i class="fas fa-file-alt"></i>
                         API
                     </a>
@@ -122,7 +122,7 @@
                 </div>
             </nav>
             <div id="banner-container">
-                <div id="banner" class="hero-image">
+                <div id="banner" class="hero-image banner">
                     <div class="hero-text">
                       <h1>It’s Coffee Time</h1><br>
                       <h5><strong><u>Coffee Facts</u>:</strong></h5>
@@ -136,11 +136,7 @@
                 <div class="stats container">
                     <div class="row">
                         <div class="stat-cards col-md-3 col-sm-6">
-                            <img class="card-img" src="../static/images/coffee-bean-icon.png" alt="Coffee beans">
-                            <div class="card-body">
-                              <h5 class="card-title">33%</h5>
-                              <p class="card-text">OF ALL BEANS FROM BRAZIL</p>
-                            </div>
+                            <img class="card-bigimg" src="../static/images/international-coffee-day.png" alt="Coffee beans">
                         </div>
                         <div class="stat-cards col-md-3 col-sm-6">
                             <img class="card-img" src="../static/images/coffee-cup.png" alt="Coffee beans">
@@ -170,32 +166,52 @@
             <div class="line"></div>
 
             <section id="production">
-                <!-- <div class="container-fluid" class="fullheight">
-                <div class="row">
-                    <div class="col-lg-10">    -->
-                        <h1>Coffee Production</h1>
-                        <h4>From plantations to your cup!</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <h6>Select Coffee producing Country here</h6>
-                        <div id="dropdownPro" onchange="optionChanged(this.value)"></div>
-                        <div id="prodLine"></div>
-                    <!-- </div> 
-                </div>
-            </div> -->
+                <div class="container-fluid" class="fullheight">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="production_banner" class="hero-image banner">
+                                <div class="hero-text text-center">
+                                  <h1>Coffee Production</h1><br>
+                                  <h5 class="text-center">From plantations to your cup!</h5>
+                                </div>
+                            </div>                           
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <h6>Select Coffee producing Country here</h6>
+                            <!-- <div id="prodMap"></div> -->
+                            <div id="dropdownPro" onchange="optionChangedProduction(this.value)"></div>
+                            <div id="prodLine"></div>
+                            <div id="consLine"></div>
+                        </div>
+                    </div>
+                </div> 
             </section>
 
             <div class="line"></div>
 
             <section id="consumption">
-                <!-- <div class="container-fluid" class="fullheight">
-                <div class="row">
-                    <div class="col-lg-10">    -->
-                        <h2>Lorem Ipsum Dolor</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <div id="consLine"></div>
-                    <!-- </div> 
-                </div>
-            </div> -->
+                <div class="container-fluid" class="fullheight">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="consumption_banner" class="hero-image banner">
+                                <div class="hero-text text-center">
+                                  <h1>Coffee Domestic Consumption of Countries</h1><br>
+                                  <h5 class="text-center">Go ahead! Make my Coffee!</h5>
+                                </div>
+                            </div>                           
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <h6>Select Country here</h6>
+                            <!-- <div id="prodMap"></div> -->
+                            <div id="dropdownCon" onchange="optionChangedConsumption(this.value)"></div>
+                            
+                        </div>
+                    </div>
+                </div> 
             </section>
 
             <div class="line"></div>
@@ -204,10 +220,10 @@
                 <div class="container-fluid" class="fullheight">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div id="quality_banner" class="hero-image">
+                        <div id="quality_banner" class="hero-image banner">
                             <div class="hero-text text-center">
                               <h1>Better beans. Better coffee. Better planet.</h1><br>
-                              <h5 class="text-center"><strong>Predict Species of Coffee from Coffee Quality</strong></h5>
+                              <h5 class="text-center">Predict Species of Coffee from Coffee Quality</h5>
                             </div>
                         </div>                           
                     </div>
@@ -245,14 +261,51 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row" onload="predict()">
                     <div class="col-lg-12 d-flex justify-content-center">
-                        <!-- <img id="imgSpecies" src="../static//images/coffee-species.jpg" alt="ARABICA   ROBUSTA"> -->
                     </div>
                 </div>
                 <div class="row">
 
             </div>
+            </section>
+            <!-- <div class="line"></div> -->
+            <section id="api">
+              <div class="container-fluid" class="fullheight">
+                <div class="row">
+
+                    <div class="col-md-12">
+                      <h2 style="font-size: 40px; color: rgb(145, 101, 20);" class="text-center">Coffee dataset API Documentation</h2>
+                      <hr style="height:2px;border-width:0;background-color:rgb(238, 234, 234)">
+                      <h4 style="margin-top: 50px;">Endpoints</h4>
+                    </div>
+                    <div class="col-md-3 col-sm-12">
+                      <ul>
+                        <li><a href="api/pct">Coffee Production, Consumption and Trade</a></li>
+            
+                    </ul>
+                    </div>
+            
+                    <div class="col-md-9 col-sm-12">
+                        <ul>
+                            <hr>
+                            <li>
+                              <a href="api/pct">Coffee Production, Consumption and Trade Actuals and Projections</a>
+                              <p>Route:  /api/pct</p>
+                              <p>Returns the Combined data of Coffee Production, consumption and Trade of different Countries in different years.</p>
+                              <h4>Example Output</h4>
+                              <img src="../static/images/PCTcoffeeAPI.png" max-height="500px">
+                              <p><strong>Attributes: </strong>'Arabica Production', 'Bean Exports', 'Bean Imports', 'Domestic Consumption', 
+                                'Exports', 'Imports', 'Production', 'Roast & Ground Exports', 'Roast & Ground Imports', 
+                                'Robusta Production', 'Rst,Ground Dom. Consum', 'Soluble Dom. Cons.', 'Soluble Exports', 
+                                'Soluble Imports'</p>
+                            </li>
+                            <hr>
+            
+                        </ul>
+                    </div>
+                </div>
+              </div>
             </section>
             
         </div>
@@ -273,6 +326,11 @@
             });
         });
     </script>
+    <!-- API key -->
+    <!-- <script src="../static/js/config.js"></script> -->
+    <!-- Leaflet JavaScript -->
+    <!-- <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"></script> -->
+ 
     <!-- D3 JavaScript -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <!-- Jsuits library for Dropdown -->
@@ -281,7 +339,7 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
 
     <!-- Local JS files -->
-    <script src="../static/js/prodMap.js"></script>
+    <!-- <script src="../static/js/prodMap.js"></script> -->
     <script type="text/javascript" src="../static/js/dropdown.js"></script>
     <script src="../static/js/logic.js"></script>
     <!-- Quality Section -->

@@ -6,7 +6,7 @@ df_coffee = pd.read_csv("data/psd_coffee.csv")
 # Removing unnecessary data(columns and rows)
 df_coffee = df_coffee[['Country_Name', 'Market_Year',
                        'Attribute_Description','Value']]
-attr_rmlist = ['Beginning Stocks', 'Ending Stocks', 'Other Production', 'Rst,Ground Dom. Consum', 'Soluble Dom. Cons.', 'Total Distribution', 'Total Supply']
+attr_rmlist = ['Beginning Stocks', 'Ending Stocks', 'Other Production', 'Total Distribution', 'Total Supply']
 df_coffee = df_coffee[~df_coffee['Attribute_Description'].isin(attr_rmlist)]
 
 

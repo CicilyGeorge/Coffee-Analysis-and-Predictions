@@ -1,7 +1,7 @@
 // when the submit button is clicked
-d3.selectAll("#btn").on("click", optionChanged);
+d3.selectAll("#btn").on("click", predict);
 
-function optionChanged() {
+function predict() {
     d3.json('/api/predict', {
         method:"POST",
         body: JSON.stringify({
