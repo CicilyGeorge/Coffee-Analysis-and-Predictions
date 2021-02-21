@@ -5,18 +5,59 @@ from sqlalchemy import Column, Integer, String, Float
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 from flask import Flask, jsonify, render_template, request
-from flask_restful import Api
-from predictSpecies import Predict
 import numpy as np
 import joblib
+from sklearn.preprocessing import StandardScaler
+
 
 # Flask Setup
 #################################################
 app = Flask(__name__)
-API = Api(app)
 
 # Load model
 Species_Model = joblib.load('model_species.sav')
+
+
+# Predictions 
+@app.route("/api/predict", methods=["GET", "POST"])
+def predict():
+    if request.method == "GET":
+        # return "Here's how you use this API....." 
+        return render_template("index.html/#quality")
+    
+    if request.method == "POST":
+        
+        if not request.json: # if not JSON, then return HTTP 400 - Error 
+            return "JSON body not found", 400
+            
+        # if OK, then perform prediction and return result 
+        modelInputs = {
+            'aroma': request.json['aroma'],
+            'aftertaste': request.json['aftertaste'],
+            'acidity': request.json['acidity'],
+            'body': request.json['body'],
+            'balance': request.json['balance'],
+            'uniformity': request.json['uniformity'],
+            'cleancup': request.json['cleancup'],
+            'sweetness': request.json['sweetness'],
+            'moisture': request.json['moisture'],
+            'cat1defect': request.json['cat1defect'],
+            'cat2defect': request.json['cat2defect']
+        }
+        X_new = np.fromiter(modelInputs.values(), dtype=float)
+        # # Create a StandardScater model and fit it to the training data
+        # X_scaler = StandardScaler()
+        # # Transform the training and testing data using the X_scaler
+        # X_new_scaled = X_scaler.fit_transform(X_new)
+        # X=[]
+        # for i in range(11):
+        #     print(X_new_scaled[i][0])
+        #     X = X.append(X_new_scaled[i][0])
+        #     print(X)
+        out = {'prediction': Species_Model.predict([X_new])[0]}
+        return jsonify(out), 200 # return success 
+
+
 
 # Database Setup
 #################################################
@@ -74,47 +115,10 @@ def PCT():
 
 
 
-# Predictions
-# Add predict to route predict
-# API.add_resource(Predict, '/predict')
-
-
-# 
-@app.route("/api/predict", methods=["GET", "POST"])
-def predict():
-    if request.method == "GET":
-        # return "Here's how you use this API....."  # CICILY TO FILL THIS WITH MORE INFO 
-        return render_template("api.html")
-    
-    if request.method == "POST":
-        
-        print(request.json)
-
-        if not request.json: # if not JSON, then return HTTP 400 - Error 
-            return "JSON body not found", 400
-            
-        # if OK, then perform prediction and return result 
-        modelInputs = {
-            'aroma': request.json['aroma'],
-            'aftertaste': request.json['aftertaste'],
-            'acidity': request.json['acidity'],
-            'body': request.json['body'],
-            'balance': request.json['balance'],
-            'uniformity': request.json['uniformity'],
-            'cleancup': request.json['cleancup'],
-            'sweetness': request.json['sweetness'],
-            'moisture': request.json['moisture'],
-            'cat1defect': request.json['cat1defect'],
-            'cat2defect': request.json['cat2defect']
-        }
-        X_new = np.fromiter(modelInputs.values(), dtype=float) 
-        out = {'prediction': Species_Model.predict([X_new])[0]}
-        return jsonify(out), 200 # return success 
-        
 # html pages
 @app.route("/")
 def index():
-    return render_template('quality.html')
+    return render_template('index.html')
 
 @app.route("/quality")
 def quality():

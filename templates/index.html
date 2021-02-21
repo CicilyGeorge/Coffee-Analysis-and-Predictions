@@ -9,7 +9,8 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel=stylesheet href="../static/css/slider.css"/>
 
     <!-- JSuites CSS-->
     <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
@@ -20,7 +21,7 @@
 </head>
 
 <body>
-
+ 
     <div class="wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar">
@@ -121,10 +122,10 @@
                 </div>
             </nav>
             <div id="banner-container">
-                <div class="hero-image">
+                <div id="banner" class="hero-image">
                     <div class="hero-text">
                       <h1>It’s Coffee Time</h1><br>
-                      <h5>Coffee Facts</h5>
+                      <h5><strong><u>Coffee Facts</u>:</strong></h5>
                       <p>It’s the second most popular beverage in the world.</p>
                       <p>Coffee is the second most traded product on the market after petroleum.</p>
                       <p>Two major types of coffee are Arabica and Robusta.</p>
@@ -169,32 +170,32 @@
             <div class="line"></div>
 
             <section id="production">
-                <div class="container-fluid" class="fullheight">
+                <!-- <div class="container-fluid" class="fullheight">
                 <div class="row">
-                    <div class="col-lg-12">   
+                    <div class="col-lg-10">    -->
                         <h1>Coffee Production</h1>
                         <h4>From plantations to your cup!</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         <h6>Select Coffee producing Country here</h6>
                         <div id="dropdownPro" onchange="optionChanged(this.value)"></div>
                         <div id="prodLine"></div>
-                    </div> 
+                    <!-- </div> 
                 </div>
-            </div>
+            </div> -->
             </section>
 
             <div class="line"></div>
 
             <section id="consumption">
-                <div class="container-fluid" class="fullheight">
+                <!-- <div class="container-fluid" class="fullheight">
                 <div class="row">
-                    <div class="col-lg-12">   
+                    <div class="col-lg-10">    -->
                         <h2>Lorem Ipsum Dolor</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         <div id="consLine"></div>
-                    </div> 
+                    <!-- </div> 
                 </div>
-            </div>
+            </div> -->
             </section>
 
             <div class="line"></div>
@@ -202,12 +203,55 @@
             <section id="quality">
                 <div class="container-fluid" class="fullheight">
                 <div class="row">
-                    <div class="col-lg-12">   
-                        <h2>Lorem Ipsum Dolor</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <div id="ql"></div>
-                    </div> 
+                    <div class="col-lg-12">
+                        <div id="quality_banner" class="hero-image">
+                            <div class="hero-text text-center">
+                              <h1>Better beans. Better coffee. Better planet.</h1><br>
+                              <h5 class="text-center"><strong>Predict Species of Coffee from Coffee Quality</strong></h5>
+                            </div>
+                        </div>                           
+                    </div>
+                </div> 
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <p>The data contain reviews of Arabica and Robusta coffee bean Species from the Coffee Quality Institute's trained reviewers.</p>
+                        <h1>Predicted Species: <span id="predicted_species"></span></h1>
+                        <p>Enter your quality measures below and see the predicted Species!</p>
+                    </div>
                 </div>
+                <div class="row sliders">
+                    <div class="col-md-6 col-sm-12">   
+                        <div class="slider_content1">  
+                            <input type="text" class="slider1" name="value1" id="inputAroma" text="Aroma:" min=0 max=10 round=2 value=7.58>
+                            <input type="text" class="slider1" name="value2" id="inputAftertaste" text="After Taste:" min=0 max=10 round=2 value=7.42>
+                            <input type="text" class="slider1" name="value3" id="inputAcidity" text="Acidity:" min=0 max=10 round=2 value=7.83>
+                            <input type="text" class="slider1" name="value4" id="inputBody" text="Body:" min=0 max=10 round=2 value=7.42>
+                            <input type="text" class="slider1" name="value5" id="inputBalance" text="Balance:" min=0 max=10 round=2 value=7.5>
+                            <input type="text" class="slider1" name="value6" id="inputUniformity" text="Uniformity:" min=0 max=10 round=2 value=10>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12"> 
+                        <div class="slider_content2">
+                            <input type="text" class="slider1" name="value7" id="inputCleanCup" text="Cup Cleanliness:" min=0 max=10 round=2 value=10>
+                            <input type="text" class="slider1" name="value8" id="inputSweetness" text="Sweetness:" min=0 max=10 round=2 value=7.42>
+
+                            <input type="text" class="slider1" name="value9" id="inputMoisture" text="Moisture:" min=0 max=0.3 round=2 value=0.00 color="#ffc8c7">
+                            <input type="text" class="slider1" name="value10" id="inputC1Defect" text="Category One Defects:" min=0 max=65 value=0 color="#ffcdcd">
+                            <input type="text" class="slider1" name="value11" id="inputC2Defect" text="Category Two Defects:" min=0 max=65 value=0 color="#ffcdcd">   
+                            
+                            <input id="btn" type="submit" value="Predict" class="btn btn-default">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 d-flex justify-content-center">
+                        <!-- <img id="imgSpecies" src="../static//images/coffee-species.jpg" alt="ARABICA   ROBUSTA"> -->
+                    </div>
+                </div>
+                <div class="row">
+
             </div>
             </section>
             
@@ -240,6 +284,9 @@
     <script src="../static/js/prodMap.js"></script>
     <script type="text/javascript" src="../static/js/dropdown.js"></script>
     <script src="../static/js/logic.js"></script>
+    <!-- Quality Section -->
+    <script type="text/javascript" src="../static/js/sliders.js"></script>
+    <script src="../static/js/predictSpecies.js"></script>
     
 </body>
 

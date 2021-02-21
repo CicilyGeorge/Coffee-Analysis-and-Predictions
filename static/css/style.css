@@ -9,7 +9,7 @@ p {
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
-    color: #999;
+    color: #272727;
 }
 
 a,
@@ -68,6 +68,7 @@ span {
     background: #4b3114;
     color: #fff;
     transition: all 0.3s;
+    z-index: 1;
 }
 
 #sidebar .nonCTAs {
@@ -188,18 +189,23 @@ ul.CTAs a {
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
+section {
+    width: 100%;
+}
 
 #content {
-    position:relative;
+    float: right;
+    position: relative;
     left: 200px;
-    width: 87%;
+    width: 86%;
     min-height: 100vh;
     transition: all 0.3s;
+    z-index: -1;
 }
 
 #content.expand {
     left: 100px !important;
-    width: 96%;
+    width: 94%;
 } 
 
 .main-heading { 
@@ -215,7 +221,7 @@ ul.CTAs a {
 
 
 /* The hero image */
-.hero-image {
+#banner {
     /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/bannerbg.txt");
   
@@ -230,17 +236,21 @@ ul.CTAs a {
   }
   
   /* Place text in the middle of the image */
-  .hero-text {
+  #banner .hero-text {
     text-align: center;
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: white !important;
   }
 
-  .hero-text h1 {
+  #banner .hero-text h1 {
     margin-bottom: 50px;
+  }
+
+  #banner .hero-text p {
+    color: white !important;
   }
 
   .stat-cards {
@@ -275,15 +285,56 @@ ul.CTAs a {
     QUALITY
 ----------------------------------------------------- */
 #quality {
-    width: 100%;
+    width: 99%;
     min-height: 100vh;
+    background-color: #fff;
     transition: all 0.3s;
+    margin: 0 20px;
 }
 
-#ql {
-    width: 100%;
-    height: auto;
+#quality_banner {
+    height: 200px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/coffee-quality.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+#quality_banner .hero-text {
+    color: #fff;
+}
+
+#imgSpecies{
+    width: 400px;
+    height: auto;
+    padding: 0 5%;
+}
+
+.sliders {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/coffee-species.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 35%;
+}
+
+.slider_content1 {
+    float: left;
+    width:300px
+}
+
+.slider_content2 {
+    float: right;
+    width: 300px;
+    margin-right: 40px;
+}
+
+#btn {
+    float: right;
+    margin-top: 10px;
+    background-color: #4b3114;
+    color: #fff;
+}
+
 
 /* ---------------------------------------------------
     MEDIAQUERIES
@@ -351,7 +402,7 @@ ul.CTAs a {
         font-size: 1.5rem !important;
     }
    
-    .hero-text {
+    #banner {
         top: 50%;
     }
 
