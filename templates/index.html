@@ -56,9 +56,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#climate">
+                    <a href="#countries">
                         <i class="fas fa-sun"></i>
-                        Climate
+                        Countries
                     </a>
                 </li>
             </ul>
@@ -139,14 +139,14 @@
                             <img class="card-bigimg" src="../static/images/international-coffee-day.png" alt="Coffee beans">
                         </div>
                         <div class="stat-cards col-md-3 col-sm-6">
-                            <img class="card-img" src="../static/images/coffee-cup.png" alt="Coffee beans">
+                            <img class="card-img" src="../static/images/coffee-bean-icon.png" alt="Coffee beans">
                             <div class="card-body">
-                              <h5 class="card-title">33%</h5>
+                              <h5 class="card-title">38.5%</h5>
                               <p class="card-text">OF ALL BEANS FROM BRAZIL</p>
                             </div>
                         </div>
                         <div class="stat-cards col-md-3 col-sm-6">
-                            <img class="card-img" src="../static/images/coffee-bean-icon.png" alt="Coffee beans">
+                            <img class="card-img" src="../static/images/coffee-cup.png" alt="Coffee beans">
                             <div class="card-body">
                               <h5 class="card-title">33%</h5>
                               <p class="card-text">OF ALL BEANS FROM BRAZIL</p>
@@ -178,12 +178,22 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-lg-7 col-md-12 text-center">
+                            <div id="prodMap">
+                                <div class='tableauPlaceholder' id='viz1613935481909' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;YK&#47;YKKR7BK27&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;YKKR7BK27' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;YK&#47;YKKR7BK27&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1613935481909');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-12 text-center">
+                            <div id="prodPie">
+                                <div class='tableauPlaceholder' id='viz1613935966223' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;CoffeeproductionPie&#47;ProductionPie&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='CoffeeproductionPie&#47;ProductionPie' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;CoffeeproductionPie&#47;ProductionPie&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1613935966223');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-lg-12 text-center">
-                            <h6>Select Coffee producing Country here</h6>
-                            <!-- <div id="prodMap"></div> -->
-                            <div id="dropdownPro" onchange="optionChangedProduction(this.value)"></div>
-                            <div id="prodLine"></div>
-                            <div id="consLine"></div>
+                            <div id="prodBar">
+                                <div class='tableauPlaceholder' id='viz1613933679917' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;CoffeeproductionTop&#47;ProductionTop&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='CoffeeproductionTop&#47;ProductionTop' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;CoffeeproductionTop&#47;ProductionTop&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1613933679917');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                            </div>
                         </div>
                     </div>
                 </div> 
@@ -204,10 +214,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-12 text-center">
-                            <h6>Select Country here</h6>
-                            <!-- <div id="prodMap"></div> -->
-                            <div id="dropdownCon" onchange="optionChangedConsumption(this.value)"></div>
+                        <div class="col-lg-12 text-center" style="width:1100px;">
                             
                         </div>
                     </div>
@@ -269,7 +276,35 @@
 
             </div>
             </section>
-            <!-- <div class="line"></div> -->
+
+            <div class="line"></div>
+
+            <section id="countries">
+                <div class="container-fluid" class="fullheight">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="production_banner" class="hero-image banner">
+                                <div class="hero-text text-center">
+                                  <h1>Coffee Production</h1><br>
+                                  <h5 class="text-center">From plantations to your cup!</h5>
+                                </div>
+                            </div>                           
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <div id="prodMap">
+                            <h6>Select Coffee producing Country here</h6>
+                            <div id="dropdownPro" onchange="optionChangedProduction(this.value)"></div>
+                            <div id="prodLine"></div>
+                            <div id="consLine"></div>
+                        </div>
+                    </div>
+                </div> 
+            </section>
+
+            <div class="line"></div>
+
             <section id="api">
               <div class="container-fluid" class="fullheight">
                 <div class="row">
@@ -307,6 +342,7 @@
                 </div>
               </div>
             </section>
+            
             
         </div>
     </div>
