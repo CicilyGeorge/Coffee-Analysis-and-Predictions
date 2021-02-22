@@ -147,6 +147,7 @@ function displayLineGraph_DomConsumption(Data, countryName) {
     let lineData_cons = {
         x: yearsC,
         y: consumptionValues,
+        line: { color: "gray"},
         name: "Total",
         type: "scatter",
         mode: "lines+markers"
@@ -157,7 +158,7 @@ function displayLineGraph_DomConsumption(Data, countryName) {
     let lineData_roast = {
         x: yearsRG,
         y: roastValues,
-        color: "orange",
+        line: { color: "brown"},
         name: "Roast, Ground",
         type: "line"
     };
@@ -166,7 +167,7 @@ function displayLineGraph_DomConsumption(Data, countryName) {
     let lineData_soluble = {
         x: yearsS,
         y: solubleValues,
-        color: "green",
+        line: { color: "black"},
         name: "Soluble",
         type: "line"
     };

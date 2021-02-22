@@ -120,13 +120,9 @@ def PCT():
 def index():
     return render_template('index.html')
 
-@app.route("/quality")
-def quality():
-    return render_template('quality.html')    
-
-@app.route('/api')
-def api():
-    return render_template('api.html')     
+@app.route("/information")
+def information():
+    return render_template('information.html') 
 
 
 

@@ -28,10 +28,10 @@ a:focus {
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.navbar-btn {
+.sidebarCollapse {
     box-shadow: none;
     outline: none !important;
-    border: none;
+    border: white;
 }
 
 .line {
@@ -215,8 +215,9 @@ section {
 }
 
 #banner-container {
+    top: 100px;
     width: 100%;
-    height: 15%;
+    height: 100vh;
     background-color: #c49f76
     /* #bda074; */
 }
@@ -298,7 +299,7 @@ section {
 }
 
 #prodPie {
-    margin: 10px 1%;
+    margin: 20px 1%;
 }
 
 #prodBar {
@@ -306,100 +307,19 @@ section {
     height: fit-content;
     max-width: 90%;
 }
-/*
-.leaflet-pane leaflet-map-pane {
-    transform: translate3d(103.841px, -25.2109px, 0px);
-  }
-  
-  .leaflet-container {
-    font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
-  }
-  
-  .leaflet-popup-content {
-    text-align: center;
-  }
-  .center {
-    display: block;
-  
-  }
-  .legend {
-    padding: 6px 8px;
-    font: 12px Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    color: #555;
-    background: #fff;
-    background: rgba(255, 255, 255, 1);
-    border-radius: 5px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  .legend ul {
-    padding: 0;
-    margin: 0;
-    clear: both;
-    list-style-type: none;
-  }
-  
-  .legend li {
-    display: inline-block;
-    width: 30px;
-    height: 22px;
-  }
-  
-  .legend .min {
-    float: left;
-    padding-bottom: 5px;
-  }
-  
-  .legend .max {
-    float: right;
-  }
-  
-  .info { 
-    padding: 6px 8px; 
-    font: 16px/18px Arial, Helvetica, sans-serif; 
-    background: white; 
-    background: rgba(255,255,255,0.8); 
-    box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; 
-  } 
-  .info h4 { 
-    margin: 0 0 5px; 
-    color: #777; 
-    font-size: 18px;
-  }
-  .legend { 
-    text-align: left; 
-    line-height: 18px; 
-    color: rgb(51, 50, 50); 
-  } 
-  .legend i { 
-    width: 18px; 
-    height: 18px; 
-    float: left; 
-    margin-right: 8px; 
-    opacity: 0.7; 
-  }*/
-
-.lineGraphs {
-    padding: 10px 10%;
-    width: 80%;
-    min-height: 500px;
-} 
-
-
 
 /* ---------------------------------------------------
-    PRODUCTION
+    IMPORTS
 ----------------------------------------------------- */
-#consumption {
+#imports {
     width: 100%;
     min-height: 100vh;
     transition: all 0.3s;
 }
 
-#consumption_banner {
+#imports_banner {
     height: 200px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/coffee-consumption.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/coffee-trade.jpg");
 }
 
 /* ---------------------------------------------------
@@ -449,6 +369,20 @@ section {
 }
 
 /* ---------------------------------------------------
+    COUNTRIES SECTION
+----------------------------------------------------- */
+#countries_banner {
+    height: 200px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/coffee-consumption.jpg");
+}
+
+.lineGraphs {
+    padding: 10px 10%;
+    width: 80%;
+    min-height: 500px;
+}
+
+/* ---------------------------------------------------
     API SECTION
 ----------------------------------------------------- */
 
@@ -470,6 +404,10 @@ section {
     MEDIAQUERIES
 ----------------------------------------------------- */
 
+body{
+    font-size: smaller;
+}
+
 @media (max-width: 768px) {
     #sidebar {
         min-width: 100px;
@@ -477,10 +415,22 @@ section {
         text-align: center;
         margin-left: -100px !important;
     }
+
     #content {
         left: 0px !important;
         width: 100%;
     }     
+
+    .main-heading h2 {
+        padding: 0;
+        font-size: 1.2rem !important;
+    }
+
+    #banner .hero-text {
+        top: 55%;
+        font-size: 0.1rem;
+    }
+
     .dropdown-toggle::after {
         top: auto;
         bottom: 10px;
@@ -530,10 +480,6 @@ section {
 
     .main-heading { 
         font-size: 1.5rem !important;
-    }
-   
-    #banner {
-        top: 50%;
     }
 
     .hero-text h1 {

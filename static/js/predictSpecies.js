@@ -2,6 +2,7 @@
 d3.selectAll("#btn").on("click", predict);
 
 function predict() {
+    // d3.selectAll("#containerP").attr("classed","show");
     d3.json('/api/predict', {
         method:"POST",
         body: JSON.stringify({
