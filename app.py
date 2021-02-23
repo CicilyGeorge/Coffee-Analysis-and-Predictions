@@ -19,11 +19,12 @@ Species_Model = joblib.load('model_species.sav')
 
 
 # Predictions 
+# https://coffee-analysis.herokuapp.com/api/predict/<
 @app.route("/api/predict", methods=["GET", "POST"])
 def predict():
     if request.method == "GET":
         # return "Here's how you use this API....." 
-        return render_template("index.html/#quality")
+        return render_template("information.html")
     
     if request.method == "POST":
         

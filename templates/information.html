@@ -68,6 +68,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="#info" class="download">
+                        <i class="fas fa-info-circle"></i>
+                        More Information
+                    </a>
+                </li>
+                <li>
                     <a href="#references" class="article">
                         <i class="fas fa-table"></i>
                         Data Sources 
@@ -87,6 +93,12 @@
                         API
                     </a>
                 </li>
+                <li>
+                    <a href="#info" class="download">
+                        <i class="fas fa-info-circle"></i>
+                        Info
+                    </a>
+                </li>                
                 <li>
                     <a href="#references" class="article">
                         <i class="fas fa-table"></i>
@@ -117,41 +129,17 @@
                 </div>
             </nav>
     
-            <section id="info">
-                <div class="container-fluid" class="fullheight">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h2 style="font-size: 40px; color: rgb(145, 101, 20);" class="text-center">More Information</h2>                        
-                        </div>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                            
-                        </div>
-                    </div>
-                </div> 
-            </section>
-
-            <div class="line"></div>
-
-            
-            <div class="line"></div>
-
             <section id="api">
               <div class="container-fluid" class="fullheight">
                 <div class="row">
                     <div class="col-md-12">
-                        <button type="button" id="sidebarCollapse" class="btn btn-dark sidebarCollapse">
-                            <i class="fas fa-align-left"></i>
-                            <span>Resize Menu</span>
-                        </button>
                         <h2 style="font-size: 40px; color: rgb(145, 101, 20);" class="text-center">Coffee dataset API Documentation</h2>
                         <hr style="height:2px;border-width:0;background-color:rgb(238, 234, 234)">
                         <h4 style="margin-top: 50px;">Endpoints</h4>
                     </div>
                     <div class="col-md-3 col-sm-12">
                       <ul>
+                        <li><a href="api/predict">Predict Species from Quality</a></li>  
                         <li><a href="api/pct">Coffee Production, Consumption and Trade</a></li>
             
                     </ul>
@@ -159,6 +147,13 @@
             
                     <div class="col-md-9 col-sm-12">
                         <ul>
+                            <li>
+                              <a href="api/predict">Coffee Production, Consumption and Trade Actuals and Projections</a>
+                              <p>Route:  /api/predict</p>
+                              <p>Provide the Quality Measures in JSON Format.</p>
+                              <p>Here is a sample Format:</p>
+                              <p>{"aroma":"7.58","aftertaste":"7.42","acidity":"7.83","body":"7.42","balance":"7.5","uniformity":"10","cleancup":"10","sweetness":"7.42","moisture":"0","cat1defect":"0","cat2defect":"0"}</p>
+                            </li>
                             <hr>
                             <li>
                               <a href="api/pct">Coffee Production, Consumption and Trade Actuals and Projections</a>
@@ -178,7 +173,166 @@
                 </div>
               </div>
             </section>
-            
+
+            <div class="line"></div>
+
+
+            <section id="info">
+                <div class="container-fluid" class="fullheight">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="button" id="sidebarCollapse" class="btn btn-dark sidebarCollapse">
+                                <i class="fas fa-align-left"></i>
+                                <span>Resize Menu</span>
+                            </button>
+                            <h2 style="font-size: 40px; color: rgb(145, 101, 20);" class="text-center">More Information</h2>                        
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <h4>Knowing the raw material: how many varieties of coffee exist?</h4>
+                            <h6>All beans are called coffee, but in truth every bean is unique and unrepeatable!</h6>
+                            <p style="text-align: left; line-height: 1.5rem;">Not only different production areas give a different flavour to the coffee beans, but there are also different intensity levels in the same single area of origin.<br><br>
+
+                                Some beans gain maximum advantage when blended with other varieties, as the blend is able to balance missing characteristics, or to cover defects (as it happens with wine); others beans instead express their maximum flavour in their individuality, enhanced by their specificity.<br><br>
+                                
+                                It has hundreds of different cultivations, more than 500 plant genera and over 2000 different varieties, which are constantly being discovered.<br>
+                                
+                                The two main species cultivated for coffee production are Coffea <strong>Arabica</strong> and Coffea Canephora (commonly known as <strong>Robusta</strong>), and they have different characteristics.<br><br>
+                                
+                                Arabica is richer in aromatic substances but also has lower caffeine content, with a value ranging from 0.8 to 1.4% of the total, compared to 1.7 - 4% of Robusta.</p>
+
+                            <p> The Arabica plant is also more delicate: in fact, it needs particular soils and climates for its survival, it usually grows at high altitudes, with temperatures ranging from 15° to 24°C and an average annual rainfall of 1500-2000 mm (factors that are found in the coffee cup in the form of a pleasant aromatic complexity).<br><br>
+
+                                The Canephora plant is more resistant to diseases, thanks also to the greater quantity of caffeine (a natural pesticide), it can also grow at lower altitudes, with an average temperature range from 24° to 30° and more rainfall. The result of these environmental features  is a smaller bean with a strong bitter component.</p>
+                            <p>In addition to the botanical species to which the coffee plant belongs, there are other factors that can influence the intensity and the quality of coffee, and as a consequence also the resulting espresso:</p>
+                                <ul>
+                                    <li>The geographical region of the plantation </li>
+                                    <li>The type of soil</li>
+                                    <li>Sun exposure</li>
+                                    <li>Harvesting method</li>
+                                    <li>The processing method and the storage conditions</li>
+                                    <li>The roaster's skills</li>
+                                    <li>The packaging of the roasted coffee</li>
+                                </ul>
+
+                                <h2>Coffee Qualities</h2>
+                                <p>Coffee quality is important for professional coffee buyers to determine the consistency, freshness and flavors of a crop. This will determine whether a coffee fetches a low price or a high price, and therefore whether it's good enough to be roasted on it's own or mixed into a blend. The agreed upon characteristics for evaluating coffee are:</p>
+                                <h3>Flavor</h3>
+                                <p>Also called taste, flavor is a general terms that encompasses the essence or overall perception of all of the other coffee qualities including the body, aroma, acidity, sweetness/bitterness, and aftertaste.</p>
+                                <p>achieve a balance between all of these qualities so that no one quality overpowers all of the others. A coffee's flavor may be complex revealing hints of many different tastes, or may be flat and one-dimensional due to poor <a href="//espressocoffeeguide.com/all-about-coffee-2/coffee-processing/" data-wpel-link="external" rel="external noopener noreferrer">processing</a> or <a href="//espressocoffeeguide.com/coffee-makers/coffee-container/" data-wpel-link="external" rel="external noopener noreferrer">storage</a>.</p>
+                                <h3>Aroma</h3>
+                                <p><a href="//espressocoffeeguide.com/all-about-coffee-2/coffee-flavor/aroma/" data-wpel-link="external" rel="external noopener noreferrer">Aroma</a> - The smell of freshly-ground coffee beans is known as the fragrance, while the smell of the brewed coffee is the aroma, or bouquet. The aroma is a good indicator of the overall freshness of the coffee as well as its high quality, and will likely reveal whether there are any coffee bean <a href="//espressocoffeeguide.com/all-about-coffee-2/grading-coffee/coffee-defects/" data-wpel-link="external" rel="external noopener noreferrer">defects</a> (e.g., moldy beans) or off-tastes.</p>
+                                <p>Some typical aroma descriptors include floral and nutty. There are dozens more aroma terms that describe the subtle nuances in the coffee's vapors. A coffee's aroma like may be affected by the <a href="//espressocoffeeguide.com/all-about-coffee-2/roasting-coffee/" data-wpel-link="external" rel="external noopener noreferrer">roast</a> given to the coffee beans. Freshly-roasted beans tend to have a strong aroma.</p>
+                                <h3>Body</h3>
+                                <p><a href="//espressocoffeeguide.com/all-about-coffee-2/coffee-flavor/body/" data-wpel-link="external" rel="external noopener noreferrer">Body</a> - Also called mouthfeel, a coffee' body is discerned as a tactile impression on the palate as the coffee coats your tongue and swirls around in the inside of your mouth.</p>
+                                <p>A coffee's body is typically called either light, medium, or full-bodied and describes the overall heaviness, thickness, or viscosity of the coffee as you feel it in your mouth. The coffee's body affects the overall flavor and may deliver a perception of richness.</p>
+                                <p>Some factors affecting a coffee's body include how it was brewed and whether a filter is used as in the <a href="//espressocoffeeguide.com/coffee-makers/automatic-drip-coffee-makers/" data-wpel-link="external" rel="external noopener noreferrer">automatic drip-filter coffee</a>. brewing method which removes many of the coffee's essential oils and thus affects the overall body. <a href="//espressocoffeeguide.com/coffee-makers/french-press-coffee/" data-wpel-link="external" rel="external noopener noreferrer">French Press coffee</a>, in contrast, retains all of the oils as does espresso brewed in an <a href="//espressocoffeeguide.com/espresso-machines/" data-wpel-link="external" rel="external noopener noreferrer">espresso machine</a>.</p>
+                                <h3>Bitterness</h3>
+                                <p><a href="//espressocoffeeguide.com/all-about-coffee-2/coffee-flavor/bitterness/" data-wpel-link="external" rel="external noopener noreferrer">Bitterness</a> - This primary coffee <a href="//espressocoffeeguide.com/all-about-coffee-2/coffee-flavor/" data-wpel-link="external" rel="external noopener noreferrer">flavor</a> sensation is often experienced as a twinge on the soft-palate near the back of the mouth, or also may be sensed in the <a href="//espressocoffeeguide.com/all-about-coffee-2/coffee-flavor/aftertaste/" data-wpel-link="external" rel="external noopener noreferrer">aftertaste</a>.</p>
+                                <p>Bitterness is one of the four basic tastes detected at the back of the mouth along with sweet (sucrose), sour (tartaric acid), and salty (sodium chloride). Bitterness (quinine) is characterized by a solution of caffeine and quinine along with other alkaloids.</p>
+                                <p><strong>To some degree, the quality of bitterness is desirable in a coffee</strong>, and this is particularly true in <a href="//espressocoffeeguide.com/all-about-espresso/" data-wpel-link="external" rel="external noopener noreferrer">espresso</a> and <a href="//espressocoffeeguide.com/all-about-coffee-2/roasting-coffee/dark-roast/" data-wpel-link="external" rel="external noopener noreferrer">dark roast</a> coffees where the bitterness can add to the fullness of the coffee's taste. As a general rule, <a href="//espressocoffeeguide.com/all-about-coffee-2/coffee-plants/arabica-coffee/" data-wpel-link="external" rel="external noopener noreferrer">Arabica Coffee</a> is less bitter than <a href="//espressocoffeeguide.com/all-about-coffee-2/coffee-plants/robusta-coffee/" data-wpel-link="external" rel="external noopener noreferrer">Robusta</a> coffee (Coffea canephora var. robusta).</p>
+                                <p>Too much bitterness, however, can produce an unpleasant flavor, particularly if the bitterness is caused by over-extraction during the coffee brewing process.</p>
+                                <p>Excess bitterness may also be caused by making too small of an amount of coffee for the grounds used, or by using too fine of a <a href="https://espressocoffeeguide.com/coffee-grinders/" data-wpel-link="internal">coffee grind</a>. A coffee's bitterness should not be confused with its acidity (see below).</p>
+                                <h3>Acidity</h3>
+                                <p><a href="https://espressocoffeeguide.com/low-acid-coffee/" data-wpel-link="internal">Acidity</a> - The quality of coffee's acidity is often perceived as a sharp yet somewhat pleasant aftertaste near the front of the mouth. Sometimes there is a slight tingling or even a numbing sensation on the tip of the tongue. You may also feel a slight dryness at the back of the mouth and under the edges of your tongue.</p>
+                                <p>Make sure not to confuse acidity with bitterness (see above), and also do not confuse it with the ph level of the coffee which refers to the degree of acidity.</p>
+                                <p>Acidity is also very different than sourness which refers to a briny sensation on the tongue tip or a tart taste near the back of the tongue and is considered quite undesirable (e.g., in over-fermented coffee) while acidity may be one of <a href="//espressocoffeeguide.com/all-about-coffee-2/coffee-plants/" data-wpel-link="external" rel="external noopener noreferrer">coffee's</a> finest qualities.</p>
+                                <p>The most common descriptor of a coffee with strong acidity is bright. Other terms are lively or perhaps tangy and sharp. A coffee's acidity level often denotes its overall quality.</p>
+                                <p>Acidity may also be described as berry-like or lemony in its subtle qualities. Acidity is often described as pleasant and serves to enhance the coffee's other qualities. A coffee with very low acidity may be described as flat or dull, while a coffee with medium acidity may be called smooth.</p>
+                                <h3>Sweetness</h3>
+                                <p><a href="//espressocoffeeguide.com/all-about-coffee-2/coffee-flavor/sweetness/" data-wpel-link="external" rel="external noopener noreferrer">Sweetness</a> - The quality of sweetness in coffee provides a smoothness and mildness to the flavor without any harsh or undesirable tastes that might be considered <a href="//espressocoffeeguide.com/all-about-coffee-2/grading-coffee/coffee-defects/" data-wpel-link="external" rel="external noopener noreferrer">defects</a>. Distinct from the type of sweetness experienced from simply tasting sugar, a coffee' sweetness encompasses a broader quality that is perceived as a distinct sensation which may also produce a fruity flavor on the tongue tip.</p>
+                                <p>Coffee cuppers (professional coffee tasters) evaluate sweetness by swooshing the coffee around in the mouth and then describing the intensity of the coffee's sugary qualities. Sugars as well as glycols and alcohols and some amino acids produce the sweet quality, which may be more specifically described with such terms as fruity, chocolaty, or caramelly.</p>
+                                <h3>Aftertaste</h3>
+                                <p><a href="//espressocoffeeguide.com/all-about-coffee-2/coffee-flavor/aftertaste/" data-wpel-link="external" rel="external noopener noreferrer">Aftertaste</a> - Also called the finish or “nose,” a coffee's aftertaste is is experienced after you swallow a sip of the brew. An aftertaste may be quick or instead long and lingering and may “develop in the finish.” The aftertaste also may be very dry and light, or instead it may be quite sweet.</p>
+                                <p>Bright, delicate coffees with substantial acidity may also have a dry aftertaste and provide somewhat of a parched sensation. The aftertaste may also reveal fruity or spicy notes, or perhaps caramelly or chocolaty qualities.</p>
+                                <p>A clean aftertaste provides a very smooth feeling at the finish rather than a dryness. A clean finish also complements the coffee's flavors and aromas rather than creating any rapid changes in the perception of the flavors.</p>
+                        </div>
+                    </div>
+                </div> 
+            </section>
+
+            <div class="line"></div>
+
+            <section id="references">
+                <div class="container-fluid" class="fullheight">
+                  <div class="row">
+                      <div class="col-md-12">
+                          <button type="button" id="sidebarCollapse" class="btn btn-dark sidebarCollapse">
+                              <i class="fas fa-align-left"></i>
+                              <span>Resize Menu</span>
+                          </button>
+                          <h2 style="font-size: 40px; color: rgb(145, 101, 20);" class="text-center">References and Data Source</h2>
+                          <hr>
+                      </div>
+                      <div class="col-md-12">
+                        <h4 style="margin-top: 50px;">References:</h4>
+                          <ul>
+                              <li>International Coffee Organization: http://www.ico.org</li>
+                              <li>Coffee Quality Institute: https://www.coffeeinstitute.org</li>
+                              <li>Espresso Coffee Guide: https://espressocoffeeguide.com</li>
+                              <li>Coffee Statistics: https://www.coffee-statistics.com/coffee-facts</li>
+                          </ul>
+                      </div>
+                      <hr>
+                      <div class="col-md-12">
+                        <h4 style="margin-top: 50px;">Data Sources:</h4>
+                          <ul>
+                              <hr>
+                              <li>International Coffee Organization: http://www.ico.org</li>
+                              <li>Kaggle, USDA_Coffee_Data_06_2020: https://www.kaggle.com/michaellight/usda-coffee-data-06-2020</li>
+                              <li>Kaggle, Coffee Quality database from CQI: https://www.kaggle.com/volpatto/coffee-quality-database-from-cqi</li>
+                          </ul>
+                      </div>
+                      <hr>
+                  </div>
+                </div>
+              </section>
+
+              <div class="line"></div>
+
+              <section id="contact">
+                  <div class="container-fluid" class="fullheight">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="button" id="sidebarCollapse" class="btn btn-dark sidebarCollapse">
+                                <i class="fas fa-align-left"></i>
+                                <span>Resize Menu</span>
+                            </button>
+                            <h2 style="font-size: 40px; color: rgb(145, 101, 20);" class="text-center">Contact</h2>
+                            <hr style="height:2px;border-width:0;background-color:rgb(238, 234, 234)">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 30px;margin-top: 50px;">
+                        <div id='cicily-bio'>
+                            <div class="col-sm-2">
+                                <img class="photo" src="../static/images/cicily.jpg" alt="Cicily" style="border-radius: 15px; border: 5px solid rgb(255, 255, 255);">
+                            </div>
+                            <div class="col-sm-8">
+                                <h3 id="team-par-head"><strong>Cicily George</strong></h3>
+                                <hr>
+                                <p id="team-par">
+                                    Mission driven developer/analyst with proven records in developing 
+                                    full stack projects, from concept to completion. 
+                                    Adaptable and transformational leader with ability to work independently. 
+                                    A fast learner, keen to find the best solutions for the problems, 
+                                    create effective presentations, skilled in data analytics and visualization.<br>
+                                    You can follow Cicily on: </p><br>
+                                    <a href='https://www.linkedin.com/in/cicily-george-a235731a2/'>
+                                        <img class="linkIcons" src="../static/images/linkedin-logo.jpg"> LinkedIn
+                                    </a>
+                                    <a href='https://github.com/CicilyGeorge'>
+                                        <img class="linkIcons" src="../static/images/github-logo.png"> Github
+                                    </a>
+                                    <a href='https://cicilygeorge.github.io'>
+                                        <img class="linkIcons" src="../static/images/Portfolio.png"> Portfolio
+                                    </a>
+                            </div>
+                        </div>
+                    </div> 
+                  </div>
+                </section>          
             
         </div>
     </div>

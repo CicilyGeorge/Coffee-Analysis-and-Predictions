@@ -148,7 +148,7 @@ function displayLineGraph_DomConsumption(Data, countryName) {
         x: yearsC,
         y: consumptionValues,
         line: { color: "gray"},
-        name: "Total",
+        name: "Total Domestic Consumption",
         type: "scatter",
         mode: "lines+markers"
     };
@@ -188,6 +188,107 @@ function displayLineGraph_DomConsumption(Data, countryName) {
 }
 
 
+// Function to plot line graph of country's Export over time
+function displayLineGraph_Exports(Data, countryName) {
+
+    // Filter Export Data to return only data for matching country name
+    let exportData = Data.filter(consumption => consumption.Attribute == "Exports");
+    let countryExport = exportData.filter(country => country.Country_Name == countryName);
+    countryExport = countryExport.filter(country => country.Year >= 1990);
+
+    // Filter Roast,Ground Export to return only data for matching country name
+    let roastData = Data.filter(consumption => consumption.Attribute == "Roast & Ground Exports");
+    let roastExport = roastData.filter(country => country.Country_Name == countryName);
+    roastExport = roastExport.filter(country => country.Year >= 1990);
+
+    // Filter Soluble Export Data to return only data for matching country name
+    let solubleData = Data.filter(consumption => consumption.Attribute == "Soluble Exports");
+    let solubleExport = solubleData.filter(country => country.Country_Name == countryName);
+    solubleExport = solubleExport.filter(country => country.Year >= 1990);
+    
+
+    let yearsE = [];
+    let exportValues = [];
+    for (let i=0; i < countryExport.length; i++) {
+        yearsE.push(countryExport[i].Year);
+        exportValues.push(countryExport[i].Value);
+    }
+
+    let yearsRG = [];
+    let roastValues = [];
+    for (let i=0; i < roastExport.length; i++) {
+        yearsRG.push(roastExport[i].Year);
+        roastValues.push(roastExport[i].Value);
+    }
+
+    let yearsS = [];
+    let solubleValues = [];
+    for (let i=0; i < solubleExport.length; i++) {
+        yearsS.push(solubleExport[i].Year);
+        solubleValues.push(solubleExport[i].Value);
+    }
+
+    // Calculate Bean exports Data
+    let beanValues = [];
+    for (let i=0; i < countryExport.length; i++) {
+        beanValues.push(exportValues[i] - (roastValues[i] + solubleValues[i]));
+    }
+    console.log(beanValues);
+
+
+    // Plot Export data points
+    let lineData_exports = {
+        x: yearsE,
+        y: exportValues,
+        line: { color: "blue"},
+        name: "Total Exports",
+        type: "scatter",
+        mode: "lines+markers"
+    };
+
+    // Plot Bean Export points
+    let lineData_bean = {
+        x: yearsE,
+        y: beanValues,
+        line: { color: "green"},
+        name: "Bean Exports",
+        type: "line"
+    };
+      
+
+    // Plot Roast Export points
+    let lineData_roast = {
+        x: yearsRG,
+        y: roastValues,
+        line: { color: "brown"},
+        name: "Roast, Ground Exports",
+        type: "line"
+    };
+
+    // Plot Soluble Export points
+    let lineData_soluble = {
+        x: yearsS,
+        y: solubleValues,
+        line: { color: "orange"},
+        name: "Soluble Exports",
+        type: "line"
+    };
+
+
+    // // Place both data sets together in array
+    let lineData3 = [lineData_exports, lineData_bean, lineData_roast, lineData_soluble]; 
+
+    // Set title for line graph and x and y axes
+    let lineLayout3 = {
+         title: countryName + " - Coffee Exports: Total, Bean, Roast-Ground and Soluble  1990 to 2020",
+         xaxis: { title: "Years" },
+         yaxis: { title: "Exports (1000 * 60 Kg Bags)" }
+    };
+    
+    // Use plotly to display line graph at div with lineData and lineLayout
+    Plotly.newPlot('exportLine', lineData3, lineLayout3);
+}
+
 
 
 
@@ -214,7 +315,7 @@ function optionChangedProduction() {
     // Display the graphs for the desired country
     displayLineGraph_Production(apiData, country);
     displayLineGraph_DomConsumption(apiData, country);
-
+    displayLineGraph_Exports(apiData, country);
 }
 
 
@@ -230,6 +331,7 @@ function init() {
         // Display line graphs for India
         displayLineGraph_Production(apiData, "India");
         displayLineGraph_DomConsumption(apiData, "India");
+        displayLineGraph_Exports(apiData, "India");
 
     });
 }
