@@ -255,7 +255,6 @@ section {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* color: white !important; */
   }
 
   #banner .hero-text h1 {
@@ -370,6 +369,28 @@ section {
     background-color: #4b3114;
     color: #fff;
 }
+
+#predictions {
+    /* display: none; */
+    width: fit-content;
+    max-width: 90%;
+    margin: 5px 20px;
+    background-color: #837157;
+    color: #000;
+}
+
+#predictions p{
+    columns: #d8d1d1 !important;
+}
+
+.view {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
 
 /* ---------------------------------------------------
     COUNTRIES SECTION
@@ -538,4 +559,8 @@ body{
     #cicily-bio{
         padding-left: 10px;
     }
+
+    #predictions {
+        margin: 0 5px;
+    }    
 }

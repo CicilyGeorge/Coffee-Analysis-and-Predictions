@@ -233,7 +233,6 @@ function displayLineGraph_Exports(Data, countryName) {
     for (let i=0; i < countryExport.length; i++) {
         beanValues.push(exportValues[i] - (roastValues[i] + solubleValues[i]));
     }
-    console.log(beanValues);
 
 
     // Plot Export data points

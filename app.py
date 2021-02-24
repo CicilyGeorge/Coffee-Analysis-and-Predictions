@@ -46,15 +46,15 @@ def predict():
             'cat2defect': request.json['cat2defect']
         }
         X_new = np.fromiter(modelInputs.values(), dtype=float)
-        # # Create a StandardScater model and fit it to the training data
+        # X = X_new.reshape(-1,1)
+        # # # Create a StandardScater model and fit it to the training data
         # X_scaler = StandardScaler()
-        # # Transform the training and testing data using the X_scaler
-        # X_new_scaled = X_scaler.fit_transform(X_new)
-        # X=[]
+        # # # Transform the training and testing data using the X_scaler
+        # X_new_scaled = X_scaler.transform(X)
+        # X_new=[]
         # for i in range(11):
-        #     print(X_new_scaled[i][0])
-        #     X = X.append(X_new_scaled[i][0])
-        #     print(X)
+        #     X_new.append(X_new_scaled[i][0])
+        # print(f"Scaled: {[X_new]}")
         out = {'prediction': Species_Model.predict([X_new])[0]}
         return jsonify(out), 200 # return success 
 
@@ -68,13 +68,6 @@ engine = create_engine("sqlite:///coffee.sqlite")
 Base = automap_base()
 # reflect the tables
 Base.prepare(engine, reflect=True)
-
-
-# Print all of the classes mapped to the Base
-# print(f"keys: {Base.classes.keys()}")
-# Assign the CoffeePCT class to a variable
-# CoffeePCT = Base.classes.CoffeePCT
-
 
 
 
