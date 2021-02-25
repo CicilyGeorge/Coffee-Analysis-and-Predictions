@@ -379,8 +379,8 @@ section {
     color: #000;
 }
 
-#predictions p{
-    columns: #d8d1d1 !important;
+#predictions span{
+    columns: #fff !important;
 }
 
 .view {

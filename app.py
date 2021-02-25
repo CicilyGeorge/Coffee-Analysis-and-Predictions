@@ -15,11 +15,19 @@ from sklearn.preprocessing import StandardScaler
 app = Flask(__name__)
 
 # Load model
-Species_Model = joblib.load('model_species.sav')
+Species_Model = joblib.load('models/model_species.sav')
+X_scaler_species = joblib.load('models/model_species_scaler.sav')
+Method_Model = joblib.load('models/model_process_method.sav')
+X_scaler_method = joblib.load('models/model_method_scaler.sav')
+Region_Model = joblib.load('models/model_region.sav')
+X_scaler_region = joblib.load('models/model_region_scaler.sav')
+# Countries_Model = joblib.load('models/model_countries.sav')
+# X_scaler_countries = joblib.load('models/model_countries_scaler.sav')
+# Altitude_Model = joblib.load('models/model_altitude.sav')
+# X_scaler_altitude = joblib.load('models/model_altitude_scaler.sav')
 
 
 # Predictions 
-# https://coffee-analysis.herokuapp.com/api/predict/<
 @app.route("/api/predict", methods=["GET", "POST"])
 def predict():
     if request.method == "GET":
@@ -45,17 +53,35 @@ def predict():
             'cat1defect': request.json['cat1defect'],
             'cat2defect': request.json['cat2defect']
         }
+        X = np.fromiter(modelInputs.values(), dtype=float)
+        X_scaled_Species = X_scaler_species.transform([X])
+        Species = Species_Model.predict(X_scaled_Species)[0]
+
+        if (Species == "Arabica"):
+            modelInputs['species'] = 0
+        else:
+            modelInputs['species'] = 1
+
         X_new = np.fromiter(modelInputs.values(), dtype=float)
-        # X = X_new.reshape(-1,1)
-        # # # Create a StandardScater model and fit it to the training data
-        # X_scaler = StandardScaler()
-        # # # Transform the training and testing data using the X_scaler
-        # X_new_scaled = X_scaler.transform(X)
-        # X_new=[]
-        # for i in range(11):
-        #     X_new.append(X_new_scaled[i][0])
-        # print(f"Scaled: {[X_new]}")
-        out = {'prediction': Species_Model.predict([X_new])[0]}
+        X_scaled_Method = X_scaler_method.transform([X_new])
+        Method = Method_Model.predict(X_scaled_Method)[0]
+
+        X_scaled_Region = X_scaler_region.transform([X_new])
+        Region = Region_Model.predict(X_scaled_Region)[0]
+
+        # X_scaled_Country = X_scaler_countries.transform([X_new])
+        # Country = Countries_Model.predict(X_scaled_Country)[0]
+
+        # X_scaled_Altitude = X_scaler_altitude.transform([X_new])
+        # Altitude = Altitude_Model.predict(X_scaled_Altitude)[0]
+        
+
+        out = { 'prediction_Species': Species,
+                'prediction_Method': Method,
+                'prediction_Region': Region  #,
+                # 'prediction_Country': Country,
+                # 'prediction_Altitude': Altitude
+              }
         return jsonify(out), 200 # return success 
 
 
@@ -63,7 +89,11 @@ def predict():
 # Database Setup
 #################################################
 # https://coffee-analysis.herokuapp.com/
-engine = create_engine("sqlite:///coffee.sqlite")
+engine = create_engine(
+'sqlite:///coffee.sqlite',
+connect_args={'check_same_thread': False}
+)
+
 # reflect an existing database into a new model
 Base = automap_base()
 # reflect the tables

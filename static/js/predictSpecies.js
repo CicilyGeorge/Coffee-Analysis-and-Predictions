@@ -2,23 +2,7 @@
 d3.selectAll("#btn").on("click", predict);
 
 function predict() {
-    
-    // var test = JSON.stringify({
-    //     'aroma': d3.selectAll("#inputAroma").property("value"),
-    //     'aftertaste': d3.selectAll("#inputAftertaste").property("value"),
-    //     'acidity': d3.selectAll("#inputAcidity").property("value"),
-    //     'body': d3.selectAll("#inputBody").property("value"),
-    //     'balance': d3.selectAll("#inputBalance").property("value"),
-    //     'uniformity': d3.selectAll("#inputUniformity").property("value"),
-    //     'cleancup': d3.selectAll("#inputCleanCup").property("value"),
-    //     'sweetness': d3.selectAll("#inputSweetness").property("value"),
-    //     'moisture': d3.selectAll("#inputMoisture").property("value"),
-    //     'cat1defect': d3.selectAll("#inputC1Defect").property("value"),
-    //     'cat2defect': d3.selectAll("#inputC2Defect").property("value")
-    // });
-    // console.log(test); 
-    // {"aroma":"7.58","aftertaste":"7.42","acidity":"7.83","body":"7.42","balance":"7.5","uniformity":"10","cleancup":"10","sweetness":"7.42","moisture":"0","cat1defect":"0","cat2defect":"0"}
-    
+      
     d3.selectAll("#predictions").classed("view", true)
                                 .classed("hide", false);
 
@@ -43,6 +27,10 @@ function predict() {
         }
     })
     .then(json => {
-        d3.selectAll("#predicted_species").html(json["prediction"]);                                         
+        d3.selectAll("#predicted_species").html(json["prediction_Species"]);  
+        d3.selectAll("#predicted_method").html(json["prediction_Method"]);   
+        d3.selectAll("#predicted_region").html(json["prediction_Region"]); 
+        // d3.selectAll("#predicted_country").html(json["prediction_Country"]); 
+        // d3.selectAll("#predicted_altitude").html(json["prediction_Altitude"]);                                      
     })
 }
