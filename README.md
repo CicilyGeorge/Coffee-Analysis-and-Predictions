@@ -27,7 +27,8 @@ Coffee Production, Consumption and Quality Analysis
 ![Project Workflow](Images/workflow.png)
 <br>
 
-Decision Tree For Predicting the Coffee Species from the Coffee Quality Factors with 99% accuracy.
+**Machine Learning:**
+Decision Tree Output of the Machine Learning Model For Predicting the Coffee Species from the Coffee Quality Factors with 99% accuracy.
 ![Species Prediction Decision tree](Images/coffee_quality_species.png)
 
 
