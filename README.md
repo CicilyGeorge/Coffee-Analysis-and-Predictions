@@ -36,38 +36,33 @@ Decision Tree Output of the Machine Learning Model For Predicting the Coffee Spe
 
 ## ✍️ Visualizations <a name = "visualizations"></a>
 
-* World map with 2020 population of Countries. 
-![Global_Map](images/global_map.PNG)
+* 2020 Major contries producing Coffee. <br>
+![Global_Production Map](Images/Production_map.png)
 
-* Top 10 Countries & Top 10 cities in 2020. 
-![top_10](images/top_10.PNG)
+![Production pie chart](Images/Production_pie.png)
 
-* World map with 2019 population density of Countries. 
-![Global_Density_Map](images/global_density_map.png)
+* 2020 Mojor Importers of Coffee.<br> 
+![Global_Imports_Map](Images/Imports_map.png)
 
-* Top 10 Countries vs Rest of the World Population ratio in 2020. 
-![population_ratio](images/population_ratio.PNG)
+![Imports pie chart](Images/Imports_pie.png)
 
-* Australia population actual & prediction. 
-![au_population](images/australia_population.PNG)
+* Predicting Bean metadata from Coffee Quality. 
+![Qulaity page](Images/Quality.png)
 
-* Australia sex at birth ratio. 
-![au_sex_ration](images/australia_sex_ratio.PNG)
 
-* Australia birth rate. 
-![au_birthrate](images/australia_birthrate.PNG)
+
+* Individual Countries Historical data. 
+![India production](Images/India-production.png)
 
 * Australia death rate. 
-![au_deathrate](images/australia_deathrate.PNG)
+![India Domestic Consumption](Images/India-consumption.png)
 
 * Countries population actuals & prediction. 
-![country_table](images/country_table.PNG)
+![India Exports](Images/India-exports.png)
 
-* Cities population in 2019 & 2020. 
-![cities_table](images/city_table.PNG)
 
-* API data. 
-![api](images/api.PNG)
+* API Documentation. 
+![api](images/api_page.png)
 
 
 
