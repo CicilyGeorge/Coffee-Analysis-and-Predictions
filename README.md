@@ -42,7 +42,7 @@ Although the number presented in our project seems very precise, it is important
 **Questions to Answer:** <br>
 1.	From the Coffee's quality factors can we predict the Coffee bean Species, Processing Method used and Altitude, Country or Region of Origin?
 2.	Which Species of Coffee is produced more?
-3.	Which are the major Coffee Producing countries?
+3.	Which all are the major Coffee Producing countries?
 4.	Which Countries are the major importers of Coffee?
 5.  Is Coffee Beans or Roast and Ground or Soluble(Instant) Coffee Exported more by the Countries producing Coffee?
 
