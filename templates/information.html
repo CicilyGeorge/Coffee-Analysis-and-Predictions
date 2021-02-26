@@ -27,31 +27,31 @@
             </div>
             <img id="logo" src="static/images/worldcup.jfif" alt="Coffee cup with world map"/>
             <ul class="list-unstyled components">
-                <li class="active">
+                <li class="btns">
                     <a href="/">
                         <i class="fa fa-globe"></i>
                         Overview
                     </a>
                 </li>                
-                <li>
+                <li class="btns">
                     <a href="/#production">
                         <i class="fas fa-seedling" ></i>
                         Production
                     </a>
                 </li>
-                <li>
+                <li class="btns">
                     <a href="/#imports">
                         <i class="fas fa-coffee"></i>
                         Imports
                     </a>                   
                 </li>
-                <li>
+                <li class="btns">
                     <a href="/#quality">
                         <i class="fas fa-certificate"></i>
                         Quality
                     </a>
                 </li>
-                <li>
+                <li class="btns">
                     <a href="/#countries">
                         <i class="fas fa-chart-line"></i>
                         <!-- fa fa-thermometer -->
@@ -61,25 +61,25 @@
             </ul>
 
             <ul class="list-unstyled CTAs">
-                <li>
+                <li class="btns">
                     <a href="#api" class="download">
                         <i class="fas fa-file-alt"></i>
                         API Documentation
                     </a>
                 </li>
-                <li>
+                <li class="btns">
                     <a href="#info" class="download">
                         <i class="fas fa-info-circle"></i>
                         More Information
                     </a>
                 </li>
-                <li>
+                <li class="btns">
                     <a href="#references" class="article">
                         <i class="fas fa-table"></i>
                         Data Sources 
                     </a>
                 </li>    
-                <li>
+                <li class="btns">
                     <a href="#contact">
                         <i class="fas fa-address-card"></i>
                         Contact
@@ -87,25 +87,25 @@
                 </li>                                          
             </ul>
             <ul class="list-unstyled nonCTAs">
-                <li>
+                <li class="btns">
                     <a href="#api" class="download">
                         <i class="fas fa-file-alt"></i>
                         API
                     </a>
                 </li>
-                <li>
+                <li class="btns">
                     <a href="#info" class="download">
                         <i class="fas fa-info-circle"></i>
                         Info
                     </a>
                 </li>                
-                <li>
+                <li class="btns">
                     <a href="#references" class="article">
                         <i class="fas fa-table"></i>
                         Data
                     </a>
                 </li>    
-                <li>
+                <li class="btns">
                     <a href="#contact">
                         <i class="fas fa-address-card"></i>
                         Contact
@@ -353,6 +353,22 @@
                 $('#content').toggleClass('expand');
             });
         });
+        // Get the container element
+        var btnContainer = document.getElementById("sidebar");
+
+        // Get all buttons with class="btn" inside the container
+        var btns = btnContainer.getElementsByClassName("btns");
+        console.log("btns");
+
+        // Loop through the buttons and add the active class to the current/clicked button
+        for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+            console.log(btns[i]);
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+        }
     </script>
     
 </body>
