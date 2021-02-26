@@ -1,5 +1,6 @@
 # Coffee-Analysis-and-Predictions
 ![Coffee Around the World](Images/worldcup.jfif)
+<br>
 Coffee Production, Consumption and Quality Analysis
 
 ## 📝 Table of Contents
