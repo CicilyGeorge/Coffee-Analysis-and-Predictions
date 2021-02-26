@@ -10,31 +10,10 @@ Coffee Production, Consumption and Quality Analysis
 - [Acknowledgements](#acknowledgement)
 
 
-## 🧐 Team <a name = "Team"></a>
-•	Rye Capati
-•	Steve Milton
-•	Cicily George
-•	Parastoo Razavi
-•	Ezra Tassone
-
 ## 🧐 About <a name = "about"></a>
-**Description:**
-Analysis of the World Population per country and city.<br>
-Data clean-up:
-1.	Merging data from various datasets
-2.	Check for duplication
-3.	Check for invalid value
-4.	Made sure the data frame is consistent for all the data set.
-5.	Made sure no rows accidentally deleted
+**Project Workflow:**
+![Project Workflow](Images/workflow.png)
 
-
-**Summary:**
-The current US Census Bureau world population estimate in June 2019 shows that the current global population is 7,577,130,400 people on earth, which far exceeds the world population of 7.2 billion from 2015. Our dataset estimate which is based on UN data shows the world's population surpassing 7.7 billion.
-
-Many other nations have populations of at least one million, while there are also countries that have just thousands. The smallest population in the world can be found in Vatican City, where only 801 people reside.
-
-Although the number presented in our project seems very precise, it is important to remember that it is just an estimate. It simply isn't possible to be sure exactly how many people there are on Earth at any one time.
-<br>
 
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
