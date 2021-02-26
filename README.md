@@ -5,16 +5,10 @@ Coffee Production, Consumption and Quality Analysis
 
 ## 📝 Table of Contents
 
-- [About](#about)
 - [Getting Started](#getting_started)
+- [Description](#description)
 - [Visualizations](#visualizations)
 - [Acknowledgements](#acknowledgement)
-
-
-## 🧐 About <a name = "about"></a>
-**Project Workflow:**
-![Project Workflow](Images/workflow.png)
-
 
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
@@ -25,6 +19,13 @@ Coffee Production, Consumption and Quality Analysis
 3.	Which all are the major Coffee Producing countries?
 4.	Which Countries are the major importers of Coffee?
 5.  Is Coffee Beans or Roast and Ground or Soluble(Instant) Coffee Exported more by the Countries producing Coffee?
+
+
+
+## 🧐 Description <a name = "description"></a>
+**Project Workflow:**
+![Project Workflow](Images/workflow.png)
+
 
 
 ## ✍️ Visualizations <a name = "visualizations"></a>
@@ -61,6 +62,8 @@ Coffee Production, Consumption and Quality Analysis
 
 * API data. 
 ![api](images/api.PNG)
+
+
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 - UWA Data Analytics Bootcamp
