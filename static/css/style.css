@@ -203,7 +203,7 @@ section {
 #content {
     position: relative;
     left: 200px;
-    width: 88%;
+    width: 90%;
     min-height: 100vh;
     padding-left: 20px;
     transition: all 0.3s;
@@ -245,7 +245,7 @@ section {
     /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/bannerbg.txt");
     /* Set a specific height */
-    height: 70%;
+    height: 72%;
     position: relative;
   }
   
@@ -264,6 +264,10 @@ section {
 
   #banner .hero-text p {
     color: white !important;
+  }
+
+  .stats {
+    height: fit-content;
   }
 
   .stat-cards {
