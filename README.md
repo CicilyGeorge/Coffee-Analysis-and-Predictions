@@ -60,7 +60,7 @@ Decision Tree Output of the Machine Learning Model For Predicting the Coffee Spe
 
 
 * API Documentation. <br>
-![api](images/api_page.png)
+![api](Images/api_page.png)
 
 
 
