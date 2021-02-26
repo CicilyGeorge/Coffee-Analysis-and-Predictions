@@ -46,22 +46,20 @@ Decision Tree Output of the Machine Learning Model For Predicting the Coffee Spe
 
 ![Imports pie chart](Images/Imports_pie.png)
 
-* Predicting Bean metadata from Coffee Quality. 
+* Predicting Bean metadata from Coffee Quality. <br>
 ![Qulaity page](Images/Quality.png)
 
 
 
-* Individual Countries Historical data. 
+* Individual Countries Historical data. <br>
 ![India production](Images/India-production.png)
 
-* Australia death rate. 
 ![India Domestic Consumption](Images/India-consumption.png)
 
-* Countries population actuals & prediction. 
 ![India Exports](Images/India-exports.png)
 
 
-* API Documentation. 
+* API Documentation. <br>
 ![api](images/api_page.png)
 
 
